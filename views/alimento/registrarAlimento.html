@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="shortcut icon" href="/images/logo_tituloPagina.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Plan Alimenticio | Registro</title>
+  </head>
+  <body>
+    <nav id="nav_inicio" class="nav">
+      <a id="nav_logo" href="/web/inicio.html" class="nav_logo">
+        <img src="/images/GymCenterLogo.png" alt="" />
+      </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="/web/inicio.html" class="nav__link">Inicio</a></li>
+          <!--=============== DROPDOWN 1 ===============-->
+          <li class="dropdown__item">
+            <div class="nav__link">
+              Registros<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+            </div>
+
+            <ul class="dropdown__menu">
+              <li>
+                <a href="#" class="dropdown__link"> Crear menu </a>
+              </li>
+
+              <li>
+                <a
+                  href="/platillo/registrarPlatillo.html"
+                  class="dropdown__link"
+                >
+                  Registrar platillo
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/alimento/registrarAlimento.html"
+                  class="dropdown__link"
+                >
+                  Registrar alimento
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="#" class="nav__link">Favoritos</a></li>
+          <li>
+            <a href="#" class="nav__link"
+              >Buscar<i class="ri-search-line"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="perfilNav">
+        <img
+          id="img-perfil"
+          class="imgFotoPerfil"
+          src="/images/fotoPerfilDefault.jpeg"
+          onclick="irModificarCuenta()"
+          title="Modificar cuenta"
+        />
+        <button onclick="cerrarSesion()">
+          <img src="/images/logout.png" alt="Cerrar sesion" />
+        </button>
+      </div>
+    </nav>
+    <section class="principal">
+      <h1 class="titulo-pagina mrg-left">Registrar alimentos</h1>
+      <div class="contenido mrg-x-m">
+        <form
+          id="form-registrar-alimento"
+          class="form"
+          method="POST"
+          onsubmit="return validarFormRegistroAlimento()"
+        >
+          <div class="parte-registro-100 subir-foto">
+            <img
+              id="img-alimento"
+              class="img-alimento"
+              src="/images/menu-default-image.png"
+              alt="Foto del alimento"
+            />
+            <div class="ai-c">
+              <p>Foto del alimento</p>
+              <label onclick="subirImagen()" for="input-foto-alimento"
+                >Subir imagen</label
+              >
+              <input
+                type="file"
+                style="display: none"
+                accept="image/jpeg, image/png, image/jpg"
+                name="foto-alimento"
+                id="input-foto-alimento"
+              />
+            </div>
+          </div>
+          <div class="parte-registro">
+            <div id="mensaje-exito">
+              <h2>¡Registro creado con éxito!</h2>
+            </div>
+
+            <h3>Datos necesarios</h3>
+            <div class="form-inputs">
+              <input
+                placeholder="Nombre del alimento"
+                type="text"
+                name="nombre-alimento"
+                id="nombre-alimento"
+              />
+              <span id="error-nombre-alimento" class="error"></span>
+
+              <input
+                placeholder="Calorías (por 100 gramos)"
+                type="text"
+                name="calorias-alimento"
+                id="calorias-alimento"
+              />
+              <span id="error-calorias-alimento" class="error"></span>
+
+              <input
+                placeholder="Proteínas (por 100 gramos)"
+                type="text"
+                name="proteinas-alimento"
+                id="proteinas-alimento"
+              />
+              <span id="error-proteinas-alimento" class="error"></span>
+
+              <input
+                placeholder="Carbohidratos (por 100 gramos)"
+                type="text"
+                name="carbohidratos-alimento"
+                id="carbohidratos-alimento"
+              />
+              <span id="error-carbohidratos-alimento" class="error"></span>
+            </div>
+          </div>
+          <div class="parte-registro">
+            <div class="form-inputs">
+              <input
+                placeholder="Grasas (por 100 gramos)"
+                type="text"
+                name="grasas-alimento"
+                id="grasas-alimento"
+              />
+              <span id="error-grasas-alimento" class="error"></span>
+
+              <input
+                placeholder="Marca (solo si aplica)"
+                type="text"
+                name="marca-alimento"
+                id="marca-alimento"
+              />
+              <span></span>
+
+              <div class="select-wrapper">
+                <i class="ri-arrow-down-s-line select-icon"></i>
+                <select name="styled-select">
+                  <option value="default" selected>Tipo de alimento</option>
+                  <option value="1">Vegetales</option>
+                  <option value="2">Frutas</option>
+                  <option value="3">Verduras</option>
+                  <option value="4">Proteínas</option>
+                  <option value="5">Cereales y granos</option>
+                  <option value="6">Lácteos y sus alternativas</option>
+                  <option value="7">Grasas saludables</option>
+                  <option value="8">Bebidas</option>
+                  <option value="9">Snacks y golosinas</option>
+                  <option value="10">Suplementos</option>
+                </select>
+                <span id="error-tipo-alimento" class="error"></span>
+              </div>
+
+              <button
+                id="boton-registro-alimento"
+                class="boton-registro"
+                type="submit"
+              >
+                Guardar alimento
+                <img src="../../images/guardar-blanco.png" />
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer id="footer" class="footer">
+      <div class="footer_first">
+        <a href="" id="footer_logo" class="footer_logo">
+          <img src="/images/Gym.png" />
+        </a>
+        <a href="/landingPage/GymCenter.html">
+          <p>Acerca de GYM CENTER</p>
+        </a>
+      </div>
+      <div class="footer_first">
+        <p>+506 2100-1336 | gymcenter@gmail.com</p>
+      </div>
+      <p class="footer_last">&copy; 2024 Desarrollado por Jafet Hdz A.</p>
+    </footer>
+    <script src="/clients/alimentoClient.js"></script>
+  </body>
+</html>

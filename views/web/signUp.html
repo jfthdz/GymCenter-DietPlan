@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/loginStyle.css" />
+    <link rel="shortcut icon" href="/images/logo_tituloPagina.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Plan Alimenticio | Registrarse</title>
+  </head>
+  <body>
+    <div class="fondo">
+      <div class="contenido-signUp">
+        <div class="linea-progreso" id="linea-progreso">
+          <span class="paso activo">1</span>
+          <span class="paso">2</span>
+          <span class="paso">3</span>
+          <span class="paso">4</span>
+          <div class="barra-progreso">
+            <span class="indicador"></span>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <form
+            id="form-signUp"
+            class="form-signUp"
+            onsubmit="return validarCamposSignUp()"
+          >
+            <div class="formulario-paso" id="paso1">
+              <div class="signup-inputs">
+                <h2>Paso 1</h2>
+                <input
+                  type="text"
+                  name="user-email"
+                  id="user-email"
+                  placeholder="Digite su correo electronico"
+                />
+                <span id="error-user-email" class="error"></span>
+                <input
+                  type="text"
+                  name="userName"
+                  id="userName"
+                  placeholder="Digite un nombre de usuario"
+                />
+                <span id="error-user-name" class="error"></span>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Digite una contraseña"
+                />
+                <span id="error-password" class="error"></span>
+                <input
+                  type="password-confirm"
+                  name="password-confirm"
+                  id="password-confirm"
+                  placeholder="Confirme la contraseña"
+                />
+                <span id="error-password-confirm" class="error"></span>
+              </div>
+            </div>
+            <div class="formulario-paso" id="paso2">
+              <div class="signup-inputs">
+                <h2>Paso 2</h2>
+                <input
+                  type="text"
+                  name="user-email"
+                  id="user-email"
+                  placeholder="Digite su correo electronico"
+                />
+                <span id="error-user-email" class="error"></span>
+                <input
+                  type="text"
+                  name="userName"
+                  id="userName"
+                  placeholder="Digite un nombre de usuario"
+                />
+                <span id="error-user-name" class="error"></span>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Digite una contraseña"
+                />
+                <span id="error-password" class="error"></span>
+                <input
+                  type="password-confirm"
+                  name="password-confirm"
+                  id="password-confirm"
+                  placeholder="Confirme la contraseña"
+                />
+                <span id="error-password-confirm" class="error"></span>
+              </div>
+            </div>
+            <div class="formulario-paso" id="paso3">
+              <div class="signup-inputs">
+                <h2>Paso 3</h2>
+                <input
+                  type="text"
+                  name="user-email"
+                  id="user-email"
+                  placeholder="Digite su correo electronico"
+                />
+                <span id="error-user-email" class="error"></span>
+                <input
+                  type="text"
+                  name="userName"
+                  id="userName"
+                  placeholder="Digite un nombre de usuario"
+                />
+                <span id="error-user-name" class="error"></span>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Digite una contraseña"
+                />
+                <span id="error-password" class="error"></span>
+                <input
+                  type="password-confirm"
+                  name="password-confirm"
+                  id="password-confirm"
+                  placeholder="Confirme la contraseña"
+                />
+                <span id="error-password-confirm" class="error"></span>
+              </div>
+            </div>
+            <div class="formulario-paso" id="paso4">
+              <div class="signup-inputs">
+                <h2>Paso 4</h2>
+                <input
+                  type="text"
+                  name="user-email"
+                  id="user-email"
+                  placeholder="Digite su correo electronico"
+                />
+                <span id="error-user-email" class="error"></span>
+                <input
+                  type="text"
+                  name="userName"
+                  id="userName"
+                  placeholder="Digite un nombre de usuario"
+                />
+                <span id="error-user-name" class="error"></span>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Digite una contraseña"
+                />
+                <span id="error-password" class="error"></span>
+                <input
+                  type="password-confirm"
+                  name="password-confirm"
+                  id="password-confirm"
+                  placeholder="Confirme la contraseña"
+                />
+                <span id="error-password-confirm" class="error"></span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="botones">
+          <button id="regresar" disabled>Regresar</button>
+          <button id="continuar">Continuar</button>
+        </div>
+      </div>
+    </div>
+    <script src="/clients/userClient.js"></script>
+    <script src="/clients/funciones.js"></script>
+  </body>
+</html>

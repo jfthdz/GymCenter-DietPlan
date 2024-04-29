@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/loginStyle.css" />
+    <link rel="shortcut icon" href="/images/logo_tituloPagina.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Plan Alimenticio | Inicio de sesión</title>
+  </head>
+  <body>
+    <div class="contenido_login">
+      <div class="mitad mitad-1">
+        <div class="login-caja">
+          <div class="login_logo">
+            <img src="/images/GymCenterLogo.png" alt="GymCenter" />
+          </div>
+          <div class="inicioSesion">
+            <h1>Inicio de sesión</h1>
+            <form
+              id="form-login"
+              onsubmit="return validarCamposLogin()"
+              method="POST"
+              style="display: flex; flex-direction: column"
+            >
+              <input
+                type="text"
+                name="userName"
+                id="userName"
+                placeholder="Nombre de usuario"
+              />
+              <span id="errorUserName" class="error"></span>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Contraseña"
+              />
+              <span id="errorLogin" class="error"></span>
+              <button value="login" type="submit">Iniciar sesión</button>
+            </form>
+            <a href="/unlogged/recuperarPassword.html"
+              >¿Has olvidado tu contraseña?</a
+            >
+          </div>
+          <div class="registrarse">
+            <h2>¿Aún no estás registrado?</h2>
+            <a href="/web/signUp.html">¡Regístrate y logra tus metas!</a>
+          </div>
+        </div>
+      </div>
+      <div class="mitad mitad-2">
+        <img src="/images/loginBanner.jpg" />
+      </div>
+    </div>
+    <script src="/clients/loginClient.js"></script>
+  </body>
+</html>
