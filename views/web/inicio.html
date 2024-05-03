@@ -75,7 +75,7 @@
           onclick="verPerfilUsuario()"
           title="Modificar cuenta"
         />
-        <button onclick="cerrarSesion()">
+        <button class="dn" onclick="cerrarSesion()">
           <img src="/images/logout.png" alt="Cerrar sesion" />
         </button>
       </div>
@@ -86,7 +86,7 @@
         <div class="primera-parte">
           <div class="encabezado">
             <div class="calendario-opciones">
-              <div class="switch">
+              <div class="switch dn">
                 <button id="btn-semana" class="toggle-button">Semana</button>
                 <button id="btn-dia" class="toggle-button active">Día</button>
               </div>
@@ -116,7 +116,46 @@
             </div> -->
             <div class="card-platillo">
               <div class="franja-card"></div>
-              <div class="foto-platillo">
+              <div class="foto-platillo dn">
+                <img
+                  src="/images/platillos/tostadas-huevoconjamon.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="info-platillo">
+                <p>Desayuno</p>
+                <div class="df">
+                  <div class="foto-platillo-movil" style="display: none">
+                    <img
+                      src="/images/platillos/tostadas-huevoconjamon.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <h1>Tostadas con huevo</h1>
+                </div>
+                <div class="info-nutricional">
+                  <div class="prot">Proteina</div>
+                  <div class="gras">Grasas</div>
+                  <div class="carb">Carbohidratos</div>
+                </div>
+              </div>
+              <div class="opciones-platillo">
+                <button>
+                  <img src="/images/more-white64.png" alt="" srcset="" />
+                </button>
+                <button>
+                  <img
+                    class="btn-delete-platillo"
+                    src="/images/delete64.png"
+                    alt=""
+                    srcset=""
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="card-platillo">
+              <div class="franja-card"></div>
+              <div class="foto-platillo dn">
                 <img
                   src="/images/platillos/tostadas-huevoconjamon.jpg"
                   alt=""
@@ -147,7 +186,7 @@
             </div>
             <div class="card-platillo">
               <div class="franja-card"></div>
-              <div class="foto-platillo">
+              <div class="foto-platillo dn">
                 <img
                   src="/images/platillos/tostadas-huevoconjamon.jpg"
                   alt=""
@@ -178,7 +217,7 @@
             </div>
             <div class="card-platillo">
               <div class="franja-card"></div>
-              <div class="foto-platillo">
+              <div class="foto-platillo dn">
                 <img
                   src="/images/platillos/tostadas-huevoconjamon.jpg"
                   alt=""
@@ -209,38 +248,7 @@
             </div>
             <div class="card-platillo">
               <div class="franja-card"></div>
-              <div class="foto-platillo">
-                <img
-                  src="/images/platillos/tostadas-huevoconjamon.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="info-platillo">
-                <p>Desayuno</p>
-                <h1>Tostadas con huevo</h1>
-                <div class="info-nutricional">
-                  <div class="prot">Proteina</div>
-                  <div class="gras">Grasas</div>
-                  <div class="carb">Carbohidratos</div>
-                </div>
-              </div>
-              <div class="opciones-platillo">
-                <button>
-                  <img src="/images/more-white64.png" alt="" srcset="" />
-                </button>
-                <button>
-                  <img
-                    class="btn-delete-platillo"
-                    src="/images/delete64.png"
-                    alt=""
-                    srcset=""
-                  />
-                </button>
-              </div>
-            </div>
-            <div class="card-platillo">
-              <div class="franja-card"></div>
-              <div class="foto-platillo">
+              <div class="foto-platillo dn">
                 <img
                   src="/images/platillos/tostadas-huevoconjamon.jpg"
                   alt=""
@@ -840,14 +848,16 @@
         </div>
         <div class="segunda-parte">
           <h2>Datos nutricionales</h2>
-          <div>
-            <canvas id="myChart"></canvas>
-          </div>
-          <div class="info-nutricional-total">
-            <p>Calorias</p>
-            <p>Proteinas</p>
-            <p>Grasas</p>
-            <p>Carbohidratos</p>
+          <div class="datos-nutri-wrapper">
+            <div class="chart-wrapper-inicio">
+              <canvas id="myChart"></canvas>
+            </div>
+            <div class="info-nutricional-total">
+              <p>Calorias</p>
+              <p>Proteinas</p>
+              <p>Grasas</p>
+              <p>Carbohidratos</p>
+            </div>
           </div>
         </div>
       </div>

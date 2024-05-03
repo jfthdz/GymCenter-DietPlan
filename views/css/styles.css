@@ -641,8 +641,8 @@ ul {
 .card-platillo button {
     flex: 0 1 auto;
     margin: 10px 0;
-    height: 1%;
-    background-color: var(--lightblue);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
     border: 0;
 }
 
@@ -960,6 +960,10 @@ ul {
   transform: rotate(180deg);
 }
 
+.ai-c{
+    align-items: center;
+}
+
 @media screen and (min-width: 1118px) {
 
     .nav__list {
@@ -1047,7 +1051,7 @@ ul {
     }
 
     .contenido{
-        width: max-width;
+        width: 100%;
     }
 
     .nav__menu {
@@ -1094,11 +1098,99 @@ ul {
         flex-direction: column;
         row-gap: 5px;
     }
+    .contenido{
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    .encabezado{
+        margin-top: 1rem;
+    }
   }
 
   @media screen and (max-width: 604px) {
+    .nav{
+        padding: 1% 4%;
+    }
+
     .principal{
         padding: 2rem 1rem;
+    }
+
+    .encabezado{
+        margin-top: 0;
+    }
+    .df{
+        display: flex;
+        margin: 1rem 0;
+        align-items: center;
+    }
+
+    .datos-nutri-wrapper{
+        display: flex;
+        column-gap: 1rem;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .primera-parte{
+        padding: 0 1rem;
+    }
+
+    .segunda-parte{
+        margin: 1rem;
+    }
+
+    .segunda-parte h2 {
+        margin-bottom: .5rem;
+    }
+
+    .chart-wrapper-inicio{
+        display: flex;
+        justify-content: center;
+        max-width: 50%;
+    }
+
+    .dn{
+        display: none;
+    }
+
+
+    .info-platillo{
+        padding: 1rem;
+        position: relative;
+    }
+
+    .info-platillo p{
+        margin-top: 0;
+    }
+
+    .card-platillo button{
+        flex: 0;
+    }
+
+    .opciones-platillo{
+        position: absolute;
+        right: 0%;
+        top: 5px;
+    }
+
+    .info-nutricional{
+        flex-wrap: wrap;
+        width: 100%;
+        row-gap: .5rem;
+        font-size: small;
+    }
+    
+    .foto-platillo-movil{
+        display: block !important;
+    }
+
+    .foto-platillo-movil img{
+        width: 7rem;
+        height: 7rem;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-right: .5rem;
     }
 
     .human-body{

@@ -12,11 +12,15 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <title>Plan Alimenticio | Registrarse</title>
   </head>
   <body>
     <div class="fondo">
-      <div class="contenido-signUp">
+      <div class="contenido-signUp" id="contenido-signUp">
         <div class="linea-progreso" id="linea-progreso">
           <span class="paso activo">1</span>
           <span class="paso">2</span>
@@ -26,38 +30,34 @@
             <span class="indicador"></span>
           </div>
         </div>
-        <div class="form-wrapper">
-          <form
-            id="form-signUp"
-            class="form-signUp"
-            onsubmit="return validarCamposSignUp()"
-          >
-            <div class="formulario-paso" id="paso1">
+        <div class="form-wrapper" id="form-wrapper">
+          <form id="form-signUp" class="form-signUp" onsubmit="return entrar()">
+            <div class="formulario-paso mostrar" id="paso1">
               <div class="signup-inputs">
-                <h2>Paso 1</h2>
+                <h2>Datos de la cuenta</h2>
                 <input
                   type="text"
                   name="user-email"
                   id="user-email"
-                  placeholder="Digite su correo electronico"
+                  placeholder="Correo electrónico"
                 />
                 <span id="error-user-email" class="error"></span>
                 <input
                   type="text"
                   name="userName"
                   id="userName"
-                  placeholder="Digite un nombre de usuario"
+                  placeholder="Nombre de usuario"
                 />
                 <span id="error-user-name" class="error"></span>
                 <input
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Digite una contraseña"
+                  placeholder="Contraseña"
                 />
                 <span id="error-password" class="error"></span>
                 <input
-                  type="password-confirm"
+                  type="password"
                   name="password-confirm"
                   id="password-confirm"
                   placeholder="Confirme la contraseña"
@@ -67,101 +67,219 @@
             </div>
             <div class="formulario-paso" id="paso2">
               <div class="signup-inputs">
-                <h2>Paso 2</h2>
+                <h2>Datos personales</h2>
+                <div class="subir-foto">
+                  <img
+                    id="img-perfil-modificar"
+                    class="imgFotoPerfil"
+                    src="/images/fotoPerfilDefault.jpeg"
+                    alt="Foto de perfil"
+                  />
+                  <div class="ai-c">
+                    <p>Mi foto de perfil</p>
+                    <label onclick="modificarImagen()" for="inputFotoPerfil"
+                      >Subir imagen</label
+                    >
+                    <input
+                      type="file"
+                      style="display: none"
+                      accept="image/jpeg, image/png, image/jpg"
+                      name="foto-alimento"
+                      id="input-foto-alimento"
+                    />
+                  </div>
+                </div>
                 <input
                   type="text"
-                  name="user-email"
-                  id="user-email"
-                  placeholder="Digite su correo electronico"
+                  name="user-nombre"
+                  id="user-nombre"
+                  placeholder="Nombre"
                 />
-                <span id="error-user-email" class="error"></span>
+                <span id="error-user-nombre" class="error"></span>
                 <input
                   type="text"
-                  name="userName"
-                  id="userName"
-                  placeholder="Digite un nombre de usuario"
+                  name="user-apellido"
+                  id="user-apellido"
+                  placeholder="Apellidos"
                 />
-                <span id="error-user-name" class="error"></span>
+                <span id="error-user-apellido" class="error"></span>
+                <div class="select-wrapper">
+                  <i class="ri-arrow-down-s-line select-icon"></i>
+                  <select name="styled-select">
+                    <option value="default" selected>Género</option>
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
+                    <option value="3">Prefiero no especificar</option>
+                  </select>
+                  <span id="error-user-genero" class="error"></span>
+                </div>
+                <p>Fecha de nacimiento:</p>
                 <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Digite una contraseña"
+                  placeholder="Feche de nacimiento"
+                  type="date"
+                  name="user-fecha-nacimiento[]"
                 />
-                <span id="error-password" class="error"></span>
-                <input
-                  type="password-confirm"
-                  name="password-confirm"
-                  id="password-confirm"
-                  placeholder="Confirme la contraseña"
-                />
-                <span id="error-password-confirm" class="error"></span>
+                <span id="error-fecha-nacimiento" class="error"></span>
               </div>
             </div>
             <div class="formulario-paso" id="paso3">
               <div class="signup-inputs">
-                <h2>Paso 3</h2>
+                <h2>Información Personal</h2>
                 <input
                   type="text"
-                  name="user-email"
-                  id="user-email"
-                  placeholder="Digite su correo electronico"
+                  name="user-peso-actual"
+                  id="user-peso-actual"
+                  placeholder="Peso actual (kg)"
                 />
-                <span id="error-user-email" class="error"></span>
+                <span id="error-peso-actual" class="error"></span>
                 <input
                   type="text"
-                  name="userName"
-                  id="userName"
-                  placeholder="Digite un nombre de usuario"
+                  name="user-altura"
+                  id="user-altura"
+                  placeholder="Altura (cm)"
                 />
-                <span id="error-user-name" class="error"></span>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Digite una contraseña"
-                />
-                <span id="error-password" class="error"></span>
-                <input
-                  type="password-confirm"
-                  name="password-confirm"
-                  id="password-confirm"
-                  placeholder="Confirme la contraseña"
-                />
-                <span id="error-password-confirm" class="error"></span>
+                <span id="error-user-altura" class="error"></span>
+                <div class="select-wrapper">
+                  <i class="ri-arrow-down-s-line select-icon"></i>
+                  <select name="styled-select">
+                    <option value="default" selected>
+                      Nivel de actividad fisica
+                    </option>
+                    <option value="1">
+                      Sedentario (trabajas en una oficina y realizas poca o
+                      ninguna actividad física)
+                    </option>
+                    <option value="2">
+                      Ligero (haces caminatas ligeras, tareas domésticas o
+                      tienes un trabajo que implica estar de pie durante largos
+                      períodos pero sin mucha actividad física adicional)
+                    </option>
+                    <option value="3">
+                      Moderado (haces ejercicio ligero a moderado varias veces
+                      por semana)
+                    </option>
+                    <option value="4">
+                      Activo (practicas deportes regularmente o tienes un
+                      trabajo físicamente exigente)
+                    </option>
+                    <option value="5">
+                      Muy activo (realizas frecuentemente entrenamientos
+                      intensos)
+                    </option>
+                  </select>
+                  <span id="error-nivel-actividad" class="error"></span>
+                </div>
+                <p>Alergias alimenticias (si padece alguna):</p>
+                <textarea
+                  name="alergias"
+                  id="user-alergias"
+                  cols="30"
+                  placeholder='Ej: "Tomate, Maní, Camarones, etc"'
+                  ;
+                ></textarea>
               </div>
             </div>
             <div class="formulario-paso" id="paso4">
+              <!-- <h2>Medidas corporales</h2>
+              <span>(Opcionales, ayudan a seguir tu progeso)</span>
               <div class="signup-inputs">
-                <h2>Paso 4</h2>
+                <p>Pecho (cm)</p>
                 <input
+                  placeholder="Medida Pecho (cm)"
                   type="text"
-                  name="user-email"
-                  id="user-email"
-                  placeholder="Digite su correo electronico"
+                  name="medida-pecho-usuario"
+                  id="medida-pecho-usuario"
                 />
-                <span id="error-user-email" class="error"></span>
+                <span id="error-medida-pecho-usuario" class="error"></span>
+
+                <p>Biceps (cm)</p>
+                <div class="medida-inline">
+                  <input
+                    placeholder="Biceps izquierdo (cm)"
+                    type="text"
+                    name="medida-bicepiqz-usuario"
+                    id="medida-bicepiqz-usuario"
+                    class="width-100"
+                  />
+                  <span id="error-medida-bicepiqz-usuario" class="error"></span>
+                  <input
+                    placeholder="Bicep derecho (cm)"
+                    type="text"
+                    name="medida-bicepder-usuario"
+                    id="medida-bicepder-usuario"
+                    class="width-100"
+                  />
+                  <span id="error-medida-bicepder-usuario" class="error"></span>
+                </div>
+                <p>Abdomen (cm)</p>
                 <input
+                  placeholder="Medida abdomen (cm)"
                   type="text"
-                  name="userName"
-                  id="userName"
-                  placeholder="Digite un nombre de usuario"
+                  name="medida-abdomen-usuario"
+                  id="medida-abdomen-usuario"
                 />
-                <span id="error-user-name" class="error"></span>
+                <span id="error-medida-abdomen-usuario" class="error"></span>
+                <p>Cadera (cm)</p>
                 <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Digite una contraseña"
+                  placeholder="Medida cadera (cm)"
+                  type="text"
+                  name="medida-cadera-usuario"
+                  id="medida-cadera-usuario"
                 />
-                <span id="error-password" class="error"></span>
-                <input
-                  type="password-confirm"
-                  name="password-confirm"
-                  id="password-confirm"
-                  placeholder="Confirme la contraseña"
-                />
-                <span id="error-password-confirm" class="error"></span>
+                <span id="error-medida-cadera-usuario" class="error"></span>
+                <p>Muslos (cm)</p>
+                <div class="medida-inline">
+                  <input
+                    placeholder="Muslo izquierdo (cm)"
+                    type="text"
+                    name="medida-musloizq-usuario"
+                    id="medida-musloizq-usuario"
+                    class="width-100"
+                  />
+                  <span id="error-medida-musloizq-usuario" class="error"></span>
+                  <input
+                    placeholder="Muslo derecho (cm)"
+                    type="text"
+                    name="medida-musloder-usuario"
+                    id="medida-musloder-usuario"
+                    class="width-100"
+                  />
+                  <span id="error-medida-musloder-usuario" class="error"></span>
+                </div>
+                <p>Pantorrillas (cm)</p>
+                <div class="medida-inline">
+                  <input
+                    placeholder="Pantorrilla izquierda (cm)"
+                    type="text"
+                    name="medida-pantorrillaizq-usuario"
+                    id="medida-pantorrillaizq-usuario"
+                    class="width-100"
+                  />
+                  <span
+                    id="error-medida-pantorrillaizq-usuario"
+                    class="error"
+                  ></span>
+                  <input
+                    placeholder="Pantorrilla derecha (cm)"
+                    type="text"
+                    name="medida-pantorrillader-usuario"
+                    id="medida-pantorrillader-usuario"
+                    class="width-100"
+                  />
+                  <span
+                    id="error-medida-pantorrillader-usuario"
+                    class="error"
+                  ></span>
+                </div>
+              </div> -->
+              <div class="signup-complete">
+                <img src="/images/confirm.png" alt="" srcset="" />
+                <h1>¡Registro completado!</h1>
+                <div class="botones">
+                  <button class="btn-entrar" id="btn-entrar" onclick="entrar()">
+                    Entrar
+                  </button>
+                </div>
               </div>
             </div>
           </form>
